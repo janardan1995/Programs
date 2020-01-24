@@ -1,0 +1,183 @@
+1.simple array...>
+ Scanner scan=new Scanner(System.in);
+        System.out.println("enter the rows ");
+        int row=scan.nextInt();
+        System.out.println("enter the column");
+        int column=scan.nextInt();
+
+        Double arr[][]=new Double[row][column];
+        System.out.println("initialize elements");
+        for(int i=0;i<row;i++){
+        for(int j=0;j<column;j++){
+            arr[i][j]=scan.nextDouble();
+        }
+        }for(int i=0;i<row;i++){
+        for(int j=0;j<column;j++){
+            System.out.println(arr[i][j]);
+        }
+            System.out.println();
+       }
+..........................................................................................................................
+2.tik tok game.
+
+    written in copy...........
+..........................................................................................................................
+3.store prime number in 2d arr
+ int arr[][] = new int[10][30];
+        int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,k=0,l=0;
+
+       for(int i=2;i<=1000;i++){
+           int count=0;
+           for(int j=1;j<=i;j++){
+               if(i%j==0) {
+                   count++;
+               }
+           }
+           if (count == 2) {
+               if(i>=1&&i<=100){
+                   arr[0][a]=i;
+                   a++;
+               }
+               if(i>=101&&i<=200){
+                   arr[1][b]=i;
+                   b++;
+               }
+               if(i>=201&&i<=300)
+               {
+                   arr[2][c]=i;
+                   c++;
+               }
+               if(i>=301 && i<=400)
+               {
+                   arr[3][d]=i;
+                   d++;
+               }
+               if(i>=401 &&i<=500)
+               {
+                   arr[4][e]=i;
+                   e++;
+               }
+               if(i>=501&&i<=600){
+                   arr[5][f]=i;
+                   f++;
+               }
+               if(i>=601&&i<=700){
+                   arr[6][g]=i;
+                   g++;
+               }
+               if(i>=701&&i<=800){
+                   arr[7][h]=i;
+                   h++;
+               }
+               if(i>=801&&i<=900){
+                   arr[8][k]=i;
+                   k++;
+               }
+               if(i>=901&&i<=1000){
+                   arr[9][l]=i;
+                   l++;
+               }
+
+           }
+           }
+        for(int i=0;i<10;i++) {
+
+            for (int j = 0; j < 15; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+.....................................................................................................................................
+4. isprime and anagram number
+int arr[][] = new int[10][100];
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0, k = 0, l = 0;
+
+        for (int i = 2; i <= 1000; i++) {
+
+            if (  isPrime(i) && isAmagram(i)==true) {
+                if (i >= 1 && i <= 100) {
+                    arr[0][a] = i;
+                    a++;
+                }
+                if (i >= 101 && i <= 200) {
+                    arr[1][b] = i;
+                    b++;
+                }
+                if (i >= 201 && i <= 300) {
+                    arr[2][c] = i;
+                    c++;
+                }
+                if (i >= 301 && i <= 400) {
+                    arr[3][d] = i;
+                    d++;
+                }
+                if (i >= 401 && i <= 500) {
+                    arr[4][e] = i;
+                    e++;
+                }
+                if (i >= 501 && i <= 600) {
+                    arr[5][f] = i;
+                    f++;
+                }
+                if (i >= 601 && i <= 700) {
+                    arr[6][g] = i;
+                    g++;
+                }
+                if (i >= 701 && i <= 800) {
+                    arr[7][h] = i;
+                    h++;
+                }
+                if (i >= 801 && i <= 900) {
+                    arr[8][k] = i;
+                    k++;
+                }
+                if (i >= 901 && i <= 1000) {
+                    arr[9][l] = i;
+                    l++;
+                }
+
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+
+            for (int j = 0; j < 15; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+
+
+    }
+
+    private static boolean isAmagram(int i) {
+
+        int a=0;
+        int b;
+
+        while(i>0) {
+           b = i % 10;
+          a = a * 10 + b;
+            i = i / 10;
+        }
+        if (isPrime(a)==true){
+            return true;
+    }else{
+        return false;
+    }}
+
+    public static boolean isPrime(int i) {
+        int count = 0;
+        for (int j = 1; j <= i; j++) {
+            if (i % j == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+
+            return true;
+        }
+        return false;
+    }
+}

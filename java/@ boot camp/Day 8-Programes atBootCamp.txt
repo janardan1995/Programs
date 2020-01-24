@@ -1,0 +1,229 @@
+1.Binary Search alogorithm: At first array should be in the sorted form then only we can go for binary algorithm
+
+import java.util.Scanner;
+
+
+
+// Java program to implement Binary Search for strings
+class GFG {
+
+    // Returns index of x if it is present in arr[],
+    // else return -1
+    static int binarySearch(String[] s1, String x)
+    {
+        int l = 0, r = s1.length ;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+
+            int res = x.compareTo(s1[m]);
+
+            // Check if x is present at mid
+            if (res == 0)
+                return m;
+
+            // If x greater, ignore left half
+            if (res > 0)
+                l = m + 1;
+
+                // If x is smaller, ignore right half
+            else
+                r = m - 1;
+        }
+
+        return -1;
+    }
+//.....................................................................................................................................
+    // Driver method to test above
+    public static void main(String []args)
+    {
+       // String[] arr = { "contribute", "geeks", "ide", "practice"};
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter the list of words");
+        String s=scan.nextLine();
+        System.out.println(s);
+        String [] s1=s.split(" ");
+//        for(String n:s1){
+//            System.out.print(n);
+//        }
+        System.out.println("enter the no. that you wanna search");
+        String x = scan.next();
+        int result = binarySearch(s1, x);
+
+        if (result == -1)
+            System.out.println("Element not present");
+        else
+            System.out.println("Element found at "
+                    + "index " + result);
+    }
+}
+//...................................
+how compare function works 
+example
+String str1 = "Negan";  
+String str2 = ""; //empty string
+
+//it would return the length of str1 in positive number
+str1.compareTo(str2); // 5
+
+//it would return the length of str1 in negative number
+str2.compareTo(str1); //-5
+
+str1.compareTo("Negan");//0
+
+//........................................................................>
+2 bubble sort algoithm
+
+class BubbleSort
+{
+    void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    // swap arr[j+1] and arr[i]
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+    }
+
+    /* Prints the array */
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+    // Driver method to test above
+    public static void main(String args[])
+    {
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
+    }
+}
+
+......................................................................>
+simple method
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        //bubble sort
+        int [] a={3,4,5,8,1,6,9,23,15};
+        int temp;
+       for(int i=0;i<a.length;i++){
+            for(int j=0;j<a.length-1-i;j++){
+                if(a[j]<a[j+1]){
+                     temp=a[j];
+                     a[j]=a[j+1];
+                     a[j+1]=temp;
+                }
+                
+                System.out.println("\n");
+            }
+        }
+        for(int g:a){
+            System.out.print(g+" ");
+        }
+
+    }
+}
+//...............
+for string of arr in bubble sort Compare to function is used.
+  String [] a={"janardan", "baben", "raju","neelabh","bhaswati","biki"};
+        String temp;
+       for(int i=0;i<a.length;i++){
+            for(int j=0;j<a.length-1;j++){
+                if(a[j+1].compareTo(a[j])<0){
+                     temp=a[j];
+                     a[j]=a[j+1];
+                     a[j+1]=temp;
+                }
+
+            }
+        }
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+marge sort algorithms:
+package com.xuv;
+
+import org.w3c.dom.ls.LSOutput;
+
+/* Java program for Merge Sort */
+class MergeSort
+{
+    int[] array;
+    int[] tempMargeArr;
+    int length;
+
+    public static void main(String args[])
+    {
+        int inputArr[] = {1,0,2,9,5,8,4};
+
+
+        MergeSort ob = new MergeSort();
+        ob.sort(inputArr);
+
+        System.out.println("\nSorted array");
+        for(int i:inputArr){
+            System.out.print(i+" ");
+        }
+    }
+
+    public void sort(int inputArr[]){
+        this.array=inputArr;
+        this.length=inputArr.length;9
+        this.tempMargeArr=new int[length];
+
+        divideArray(0,length-1);
+    }
+
+    private void divideArray(int lowerIndex, int higherIndex) {
+        if(lowerIndex<higherIndex){
+            int middle=lowerIndex+(higherIndex-lowerIndex)/2;
+
+            //it will sort the left side of an arr
+            divideArray(lowerIndex,middle);
+            //it will sort the right side of an arr
+            divideArray(middle+1,higherIndex);
+            // we have to marge the divide array
+            mergeArray(lowerIndex,middle,higherIndex);
+        }
+
+    }
+
+    private void mergeArray(int lowerIndex, int middle, int higherIndex) {
+            for(int i=lowerIndex;i<=higherIndex;i++){
+                tempMargeArr[i]=array[i];
+            }
+            int i=lowerIndex;
+            int j=middle+1;
+            int k=lowerIndex;
+            while(i<=middle && j<=higherIndex){
+                if(tempMargeArr[i]<=tempMargeArr[j]){
+                    array[k]=tempMargeArr[i];
+                    i++;
+
+                }else
+                {
+                    array[k]=tempMargeArr[j];
+                    j++;
+                }
+                k++;
+            }
+            while(i<=middle){
+                array[k]=tempMargeArr[i];
+                k++;
+                i++;
+            }
+
+
+    }
+}
+
+

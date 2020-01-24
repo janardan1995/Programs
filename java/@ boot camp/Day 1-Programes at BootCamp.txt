@@ -1,0 +1,161 @@
+1.package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner input=new Scanner(System.in);
+        System.out.println("enter 1st name");
+        String firstName= input.next();
+        System.out.println("enter 2nd name");
+        String secondName= input.next();
+        System.out.println("enter 3rd name");
+        String thirdName= input.next();
+
+        System.out.println("Hi "+firstName+", "+secondName+", and "+thirdName+".Alice");
+    }
+}
+or
+
+package com.xuv;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter your sentences");
+        String s=scan.nextLine();
+        String [] s1=s.split(" ");
+
+        System.out.println("hi"+" "+s1[s1.length-1]+" "+s1[s1.length-2]+" ,"+s1[s1.length-3]);
+
+    }
+}
+...........................................................................................................>
+............................................................................................................>
+2. print k.......>
+
+public class Main {
+    public static void main(String[] args) {
+        int i,j,k,count=5;
+        for(i=0;i<11;i++){
+          for(j=0;j<2;j++){
+              System.out.print("*");
+          }
+          for(k=0;k<=5;k++){
+              if(k==count){
+                  System.out.print("***");
+              }else{
+                  System.out.print("  ");
+              }
+          }
+          if(i<=4){
+              count--;
+          }else if(i<=11){
+              count++;
+          }
+          System.out.println("\n");
+      }
+
+    }
+}
+
+by myself
+..........
+k pattern
+  int a=4;
+  for(int i=0;i<6;i++){
+      for(int j=0;j<2;j++){
+          System.out.print("*");
+      }
+      for(int k=0;k<=a;k++){
+
+          System.out.print("    ");
+
+      }
+      a--;
+      System.out.print("***");
+      System.out.println("\n");
+  }
+        int b=0;
+        for(int i=0;i<5;i++){
+            for(int j=0;j<2;j++){
+                System.out.print("*");
+            }
+            for(int k=0;k<=b;k++){
+
+                System.out.print("    ");
+
+            }
+            b++;
+            System.out.print("***");
+            System.out.println("\n");
+        }
+
+    }
+
+d pattern
+.........
+
+
+..............................................................................................................>
+
+3. when we commited some mistake in main class or in the main method then this types or error shows in the terminals.
+................................................................................................................>
+.................................................................................................................>
+4. just a simple code.
+         package com.company;
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter 1st name");
+        Integer a= Integer.valueOf(input.next());
+        System.out.println("enter 2nd name");
+        Integer b= Integer.valueOf(input.next());
+        System.out.println("enter 3rd name");
+        Integer c= Integer.valueOf(input.next());
+
+        int i,j,k,l;
+        i=a+b*c;
+        j= a*b+c;
+        k =c+a/b;
+        l=a%b+c;
+        System.out.println(i+" "+j+" "+k+" "+l);
+
+    }
+}
+......................................................................................>
+......................................................................................>
+5.public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter 1st name");
+        Double a= Double.valueOf(input.next());
+        System.out.println("enter 2nd name");
+        Double b= Double.valueOf(input.next());
+        System.out.println("enter 3rd name");
+        Double c= Double.valueOf(input.next());
+
+        double i,j,k,l;
+        i=a+b*c;
+        j= a*b+c;
+        k =c+a/b;
+        l=a%b+c;
+        System.out.println(i+" "+j+" "+k+" "+l);
+
+.................................
+ Scanner input=new Scanner(System.in);
+        System.out.println("enter 1st name");
+        Double a= input.nextDouble();
+        System.out.println("enter 2nd name");
+        Double b= input.nextDouble();
+        System.out.println("enter 3rd name");
+        Double c= input.nextDouble();

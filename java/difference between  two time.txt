@@ -1,0 +1,44 @@
+Scanner scan = new Scanner(System.in);
+        System.out.println("enter 1st time1");
+        String s1 = scan.next();
+        System.out.println("enter 2nd time");
+        String s2 = scan.next();
+        String [] str1 = s1.split(":");
+        String [] str2 = s2.split(":");
+        int arr1[] = new int[str1.length];
+        int arr2[] = new int[str2.length];
+
+        for(int i=0;i<str1.length;i++){
+          arr1[i]=Integer.parseInt(str1[i]);
+        }
+        for(int i=0;i<str2.length;i++){
+          arr2[i]=Integer.parseInt(str2[i]);
+        }
+
+//        for(int i:arr1){
+//            System.out.print(i+ " ");
+//        }for(int i:arr2){
+//            System.out.print(i+ " ");
+//        }
+
+
+        if(arr2[2]<arr1[2]){
+            --arr2[1];
+            arr2[2]+=60;
+        }
+
+
+
+        if(arr2[1]<arr1[1]){
+            --arr2[0];
+            arr2[1]+=60;
+        }
+
+        int difSec=arr2[2]-arr1[2];
+        int difmin=arr2[1]-arr1[1];
+        if(arr2[0]==0){
+            System.out.println("SOME THING YOU ARE DOING WRONG ....LIKE STOP TIME IS LESS THEN START TIME ");
+        }
+        int difhour=arr2[0]-arr1[0];
+        System.out.println(difhour+" "+difmin+" "+difSec);
+    }

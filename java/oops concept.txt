@@ -1,0 +1,162 @@
+constructor
+public class Main{
+    String name;
+    int emp_no;
+   
+ public Main(String name, int id){
+        this.name=name;
+        this.emp_no=id;
+    }
+    public static void main(String [] args){
+        Main j=new Main("janardan",10);
+        System.out.println();
+    }
+}
+
+here public Main (string,int) this type of syntex is known as constructor and note that the here M in the Main should be in
+uppercase life main class.
+its is basically using for initializa an object.
+its is also used for reducing the no of lines in an programming.
+
+constructor are created automatically by complier as soon as we creat an object.
+three types of constructor are there
+1.default=complier creates
+2.no argument constructor
+3.parametriza constructor.
+
+..............................................................................>
+inheritance:
+
+inheriting the properties of parent class into child class.
+ie. object acquires all the properties and behavious of parent class.
+eg.
+package com.xuv;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+
+ class Fun {
+    private static void run() {
+        System.out.println("run run go go");
+    }
+ }
+ class Gun extends Fun{
+     void ass(){
+         System.out.println("kill all your enemy");
+     }
+        }
+class Ok extends Gun{
+    public void sun(){
+        System.out.println("sun is our god");
+    }
+    public static void main(String [] args){
+         Fun j=new Fun();
+         j.run();
+     //    j.sun();
+         Ok k=new Ok();
+         k.run();
+        k.sun();
+       // System.out.println();
+        Gun l=new Gun();
+        l.ass();
+        l.run();
+    }
+    }
+................................
+there are basically two types of relationship exist in inheritance 
+1.IS-A  eg car is a vehical(highly couple)
+2.HAS-A eg car has an engine or car has a music player(called association)
+  Here music player contains weak couple as this effect non in the movement of car (so it is called aggregation)
+  Engine is the main part of the car hence it is strongly couple (this is called composition)
+.....................................................................................................................>
+.........................................................................................................................>
+Polymorphism
+1.compile type ploymorphism(static)(complier handle it)(METHOD OVERLOADING)=same name and class but diferent argument
+2.run time(dynamic)(JVM handel it)(METHOD OVERRIDING)=same arguments and name but different class.
+
+public class Main extends Go{
+  //for overriding concept
+    void go(){
+        System.out.println("just go man");
+    }
+//for overhiding concept
+    void come(String j){
+        System.out.println(j+" "+"come fast");
+    }
+    void come(){
+        System.out.println("hurry!!");
+    }
+    //main method
+    public static void main(String[] args) {
+	Main a=new Main();
+	a.go();
+	a.come();
+	a.come("janardan");
+	Go b=new Go();
+	b.go();
+    }
+}
+// for over ridding
+class Go{
+    void go(){
+        System.out.println("go go gone");
+    }
+}
+...............................................................................................
+abstraction
+it is hiding implementation and just highlighting the seup services that we areoffering.
+1.abstract class
+2.interface class
+
+public class Main extends Car{
+      int no;
+      void start(){
+          System.out.println("start schooter");
+      }
+    public static void main(String[] args) {
+	Car j=new Car();
+	j.start();
+	//Vehical d=new Vehical();
+        Main d=new Main();
+        d.start();
+    }
+}
+abstract class Vehical{
+    int no;
+    abstract void start();
+}
+class Car extends Vehical{
+    void start(){
+        System.out.println("just start ho jao bro");
+    }
+}
+
+.................................................................................................>
+encapsulation
+it is a method to hidding the date (used for security purposes).
+
+ class Employee {
+  private int emp_no;
+  public void setEmploee(int id){
+      this.emp_no=id;
+  }
+  public int getEmploee(){
+      return emp_no;
+  }
+}
+
+class Company{
+
+    public static void main(String[] args) {
+       Employee j=new Employee();
+
+       j.setEmploee(101);
+      int a= j.getEmploee();
+        System.out.println(a);
+    }
+}
+
+
+
+

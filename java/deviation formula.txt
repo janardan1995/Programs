@@ -1,0 +1,31 @@
+//..............deviation in math 
+package com.xuv;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int[] arr={1,2,3,4,5,6,7,8,9};
+	int mean ;
+	int sum=0;
+	for(int i:arr){
+	    sum+=i;
+    }
+
+	mean=sum/arr.length;
+        System.out.println(mean);
+        System.out.println(sum);
+        int []arr1=new int[arr.length];
+      for(int i=0;i<arr.length;i++) {
+          arr1[i]=Math.abs(mean - arr[i]);
+      }
+      int deviation=0;
+      for(int j:arr1){
+          deviation+=j;
+      }
+      for(int j:arr1){
+          System.out.print(j+" ");
+      }
+        System.out.println();
+        System.out.println(deviation/arr.length);
+    }
+}

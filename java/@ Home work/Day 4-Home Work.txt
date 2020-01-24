@@ -1,0 +1,113 @@
+1.week day
+   package com.company;
+
+import java.util.Scanner;
+
+import static java.util.Calendar.SUNDAY;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter the date day/month/year");
+        String date=scan.nextLine();
+        String [] arr=date.split("/");
+        int [] intArr=new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            String num=arr[i];
+            intArr[i]=Integer.parseInt(num);
+        }
+        for(int n:intArr){
+            System.out.println(n);
+        }
+
+        int day=intArr[0];
+        int month=intArr[1];
+        int year=intArr[2];
+            int y = year - (14 - month) / 12;
+            int x = y + y/4 - y/100 + y/400;
+            int m = month + 12 * ((14 - month) / 12) - 2;
+            int d = (day + x + (31*m)/12) % 7;
+             System.out.println(d);
+
+        switch(d){
+            case 0:
+                System.out.println("sunday");
+               break;
+               case 1:
+                System.out.println("monday");
+               break;
+               case 2:
+                System.out.println("tusday");
+               break;
+               case 3:
+                System.out.println("wednesday");
+               break;
+               case 4:
+                System.out.println("thursday");
+               break;
+               case 5:
+                System.out.println("friday");
+               break;
+               case 6:
+                System.out.println("saturday");
+               break;
+        }
+        }}
+
+
+
+2.calendar project
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scan =new Scanner(System.in);
+        System.out.println("month");
+
+        int month=scan.nextInt();
+        System.out.println("year");
+        int year=scan.nextInt();
+        String[] months={"","JAN","FEB","MAR","APR","MAY","JUN","JULY","AUG","SEPT","OCT","NOV","DEC"};
+        int days[]={1,31,28,31,30,31,30,31,31,30,31,30,31};
+        if(isLeapYear(year)==true) {
+            System.out.println("its a leap year");
+        }
+        System.out.println("   "+months[month]+" "+year);
+        System.out.println(" S  M  T  W  T  F  S");
+
+        if(month==2 && isLeapYear(year)){
+            days[month]=29;
+        }
+
+        int d=day(month,1,year);
+        for(int i=0;i<d;i++){
+            System.out.print("   ");
+        }
+        for(int i=1;i<=days[month];i++){
+            System.out.printf("%2d ",i);
+            if(((i+d)%7==0)){
+                System.out.println();
+            }
+        }
+    }
+
+    private static int day(int month, int day, int year) {
+        int y=year-(14-month)/12;
+        int x=y+y/4-y/100+y/400;
+        int m=month+12*((14-month)/12)-2;
+        int d=(day+x+(31*m)/12)%7;
+        return d;
+    }
+
+    private static boolean isLeapYear(int year) {
+        if (year%4==0 && year%100!=0 || year%400==0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+}

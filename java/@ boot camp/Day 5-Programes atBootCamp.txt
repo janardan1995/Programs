@@ -1,0 +1,155 @@
+1. 
+package com.company;
+import java.util.Scanner;
+
+
+
+public class Main {
+
+    private static double harmonicNo(double n) {
+        double x = 0;
+        for (double i = 1; i <= n; i++) x = x + (1 / i);
+        return x;
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the no upto which you want harmonic number");
+        Double n = scan.nextDouble();
+        System.out.println("enter the angle of to know the sin");
+        Double ang = scan.nextDouble();
+        System.out.println("enter the no to know it's the binary form");
+        int x = scan.nextInt();
+        Double rad = Math.toRadians(ang);
+
+        System.out.println(harmonicNo(n));
+        System.out.println(sinAngle(rad));
+        System.out.println(cosAngle(rad));
+        System.out.println(binaryForm(x));
+
+    }
+
+    private static double cosAngle(Double rad) {
+        return Math.cos(rad);
+    }
+
+    private static double sinAngle(Double rad) {
+        return Math.sin(rad);
+    }
+
+    private static String binaryForm(int z) {
+        String x = "";
+        while (z > 0) {
+            int a = z % 2;
+            x = a + "" + x;
+            z = z / 2;
+
+
+        }
+        return x;
+    }
+}
+...................................................................................................>
+....................................................................................................>
+2.
+public class Main {
+
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+        System.out.println("enter the no.  ");
+        Double c=scan.nextDouble();
+        System.out.println(sqrt(c));
+
+
+    }
+    public static double sqrt(double c){
+        double epsilon = 1e-15;    // relative error tolerance
+        double t = c;              // estimate of the square root of c
+        // repeatedly apply Newton update step until desired precision is achieved
+        while (Math.abs(t - c/t) > epsilon*t) {
+            t = (t+c/t ) / 2.0;
+        }
+        // print out the estimate of the square root of c
+        return t;
+
+    }
+.....................>
+by scanning epsilon
+
+public class Main {
+
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+        System.out.println("enter the no.  ");
+        Double c=scan.nextDouble();
+        System.out.println("enter the epsilon no.  ");
+        Double eps=scan.nextDouble();
+        System.out.println(sqrt(c,eps));
+
+
+    }
+    public static double sqrt(double c,double epsilon){
+            
+//        double epsilon = 1e-15;    // relative error tolerance
+        double t = c;              // estimate of the square root of c
+        // repeatedly apply Newton update step until desired precision is achieved
+        while (Math.abs(t - c/t) > epsilon*t) {
+            t = (t+c/t ) / 2.0;
+        }
+        // print out the estimate of the square root of c
+        return t;
+
+    }
+............................................................................>
+............................................................................>
+3.
+public class Main {
+    public static boolean isPrime(int x){
+        int count=0;
+        if(x>=2){
+            for(int i=1;i<=x;i++){
+                if(x%i==0){
+                    count++;
+                } 
+            }
+            if(count==2){
+                return true;
+            }else return false;
+        }
+      else return false;
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter the no.");
+        int x=scan.nextInt();
+        System.out.println(isPrime(x));
+
+    }
+....................................................................................>
+.......................................................................................>
+4.
+ public static long factorial(long n){
+        long fact=1;
+      for(long i=n;i>0;i--){
+          fact*=i;
+      }
+      return fact;
+     }
+...........................................................................................>
+.............................................................................................>
+5.
+ public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter the initial money ");
+        int c=scan.nextInt();
+        System.out.println("enter the rate ");
+        Double r=scan.nextDouble();
+        System.out.println("enter the time period ");
+        int t=scan.nextInt();
+        System.out.println(futureValue(c,r,t));
+
+    }
+    public static double futureValue(int c,double r,int t){
+        return c*Math.pow((1+r),t);
+    }

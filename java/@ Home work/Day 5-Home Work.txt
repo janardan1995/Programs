@@ -1,0 +1,53 @@
+1.package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter the money that you want in the future");
+        int c = scan.nextInt();
+        System.out.println("enter the rate ");
+        Double r = scan.nextDouble();
+        System.out.println("enter the time period ");
+        int t = scan.nextInt();
+        System.out.println(futureValue(c, r, t));
+
+    }
+
+    private static double futureValue(int c, Double r, int t) {
+        return c/Math.pow((1+r),t);
+    }
+
+}
+..........................................................................................>
+............................................................................................>
+2.int array...
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, -4, 2, 7, 4, 500, 3, 12, 4, 78};
+        System.out.println(maxValue(arr));
+        System.out.println(minValue(arr));
+    }
+
+    public static int maxValue(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+
+        }
+        return max;
+    } public static int minValue(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (max > arr[i]) {
+                max = arr[i];
+            }
+
+        }
+        return max;
+    }
+}
+3.

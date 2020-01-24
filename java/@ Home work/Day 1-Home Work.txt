@@ -1,0 +1,106 @@
+1.leap year.
+  package com.company;
+
+   import java.util.Scanner;
+
+   public class Main {
+
+    public static void main(String[] args) {
+	Scanner scan=new Scanner(System.in);Scanner input=new Scanner(System.in);
+       System.out.println("enter year name");
+        int a= input.nextInt();
+        if(a>=1582){
+            if(a%4==0 && a%100!=0||a%400==0){
+                System.out.println("year is leap year");
+            }else{
+                System.out.println("not a leap year");
+            }
+
+        }else{
+            System.out.println("invalide year as that time there will be no concept about leap year");
+        }
+
+    }
+  }
+
+2.Season.
+ 
+  public static void main(String[] args)
+{
+       Scanner scan = new Scanner(System.in);
+        System.out.println("enter the month");
+        int month = scan.nextInt();
+        System.out.println("enter the day");
+        int day = scan.nextInt();
+
+    if((month == 12 && day >= 16 && day <= 31) || (month == 1 && day >=1 && day <= 31) || (month == 2 && day >= 1 && day <= 28) || (month == 3 && day >=1 && day <=15))
+    {
+        System.out.println("Winter");
+    }
+    else if((month == 3 && day >= 16 && day <= 31) || (month == 4 && day >=1 && day <= 30) || (month == 5 && day >= 1 && day <= 31) || (month == 6 && day >=1 && day <=15))
+    {
+        System.out.println("Spring");
+    }
+    else if((month == 6 && day >= 16 && day <= 30) || (month == 7 && day >=1 && day <= 31) || (month == 8 && day >= 1 && day <= 31) || (month == 9 && day >=1 && day <=15))
+    {
+        System.out.println("Summer");
+    }
+    else if((month == 9 && day >= 16 && day <= 30) || (month == 10 && day >=1 && day <= 31) || (month == 11 && day >= 1 && day <= 30) || (month == 12 && day >=1 && day <=15))
+    {
+        System.out.println("Fall");
+    }
+}
+ according to question
+ Scanner scan = new Scanner(System.in);
+        System.out.println("enter the month");
+        int m = scan.nextInt();
+        System.out.println("enter the day");
+        int d = scan.nextInt();
+        if(m==3 && d>=20 && d<=31 || m==4 && d>=1 && d<=30|| m==5 && d>=1 && d<=31|| m==6 && d>=1 && d<=20 ){
+            System.out.println("t");
+        }else{
+            System.out.println("F");
+        }
+........................................................................................................
+
+3.Quadratic:
+  public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter 1st no");
+        Double a = Double.valueOf(input.next());
+        System.out.println("enter 2nd no");
+        Double b = Double.valueOf(input.next());
+        System.out.println("enter 3rd no");
+        Double c = Double.valueOf(input.next());
+
+        double delta = (b * b) -( 4 * a * c);
+        double root1 = (-b + Math.sqrt(delta)) / (2 * a);
+        double root2 = (-b - Math.sqrt(delta)) / (2 * a);
+        System.out.println(delta);
+        System.out.format("root1=%.2f and root2=%.2f",root1,root2);
+
+
+    }..............here imaginary and equal roots are neglected.
+
+4. distance formula
+   public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter 1st no");
+        Double a = Double.valueOf(input.next());
+        System.out.println("enter 2nd no");
+        Double b = Double.valueOf(input.next());
+
+
+        double distance = Math.sqrt((a*a)+(b*b));
+        System.out.println("the distance between two points are "+distance);
+
+5. random no. generator (like we play online lodo here this code are used to role dice.
+   sum of two dice random no. generator.
+      
+       public static void main(String[] args) {
+       int side=6;
+       int a=1+(int)( Math.random()*side);
+       int b=1+(int)( Math.random()*side);
+       int sum=a+b;
+        System.out.println(sum);
+    }
